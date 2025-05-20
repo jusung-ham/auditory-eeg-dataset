@@ -15,17 +15,17 @@ import seaborn as sns
 # load the results
 base_results_folder = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'experiments')
 os.makedirs(os.path.join(base_results_folder, 'figures'), exist_ok=True)
-plot_dilation = True
-plot_linear_backward = True
+plot_dilation = False
+plot_linear_backward = False
 plot_linear_forward = True
-plot_vlaai = True
+plot_vlaai = False
 
 freq_bands = {
-    'Delta [0.5-4]': (0.5, 4.0),
-    'Theta [4-8]': (4, 8.0),
+    # 'Delta [0.5-4]': (0.5, 4.0),
+    # 'Theta [4-8]': (4, 8.0),
     'Alpha [8-14]': (8, 14.0),
-    'Beta [14-30]': (14, 30.0),
-    'Broadband [0.5-32]': (0.5, 32.0),
+    # 'Beta [14-30]': (14, 30.0),
+    # 'Broadband [0.5-32]': (0.5, 32.0),
 }
 
 if plot_dilation:
@@ -251,7 +251,7 @@ if plot_linear_forward:
             # percentile = np.percentile(np.concatenate(selected_df['null_distr'].tolist(), axis=0), 95, axis=0)
             # plot the topoplot
             im , cn = mne.viz.plot_topomap(mean_scores, pos=info, axes=ax ,show=False, cmap='Reds', vlim=(min_coef,max_coef))
-            mne.viz.tight_layout()
+            # mne.viz.tight_layout()
             ax.set_title(f"{band_name} Hz")
 
             # cbar_ax = fig.add_axes([0.95, 0.15, 0.05, 0.7])
