@@ -247,3 +247,14 @@ technical_validation/experiments/figures/
 tests/test_classified/*
 # No .py in progress files
 *.py~
+
+# dataset directory
+derivatives/
+
+# results directory
+technical_validation/experiments/results*/
+# figures directory
+technical_validation/experiments/figures/
+
+# MacOS files
+.DS_Store
