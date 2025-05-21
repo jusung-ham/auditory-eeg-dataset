@@ -96,11 +96,15 @@ def main():
     print(pred_eeg.shape)
 
     # Plot the results
+    figure_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'figures')
+    if not os.path.exists(figure_dir):
+        os.makedirs(figure_dir)
     plt.figure(figsize=(10, 5))
     plt.plot(pred_eeg[0:1000,:], label='Predicted EEG')
     # plt.plot(test_env[0:1000, 0], label='Test Envelope')
     # plt.legend()
-    plt.show()
+    plt.savefig(os.path.join(figure_dir, 'pred_eeg.jpg'), dpi=800)
+    # plt.show()
 
 if __name__ == "__main__":
     main()
