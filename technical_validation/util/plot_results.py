@@ -21,11 +21,11 @@ plot_linear_forward = True
 plot_vlaai = False
 
 freq_bands = {
-    # 'Delta [0.5-4]': (0.5, 4.0),
-    # 'Theta [4-8]': (4, 8.0),
+    'Delta [0.5-4]': (0.5, 4.0),
+    'Theta [4-8]': (4, 8.0),
     'Alpha [8-14]': (8, 14.0),
-    # 'Beta [14-30]': (14, 30.0),
-    # 'Broadband [0.5-32]': (0.5, 32.0),
+    'Beta [14-30]': (14, 30.0),
+    'Broadband [0.5-32]': (0.5, 32.0),
 }
 
 if plot_dilation:

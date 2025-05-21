@@ -197,7 +197,7 @@ if __name__ == "__main__":
     highpass = args.highpass
     lowpass = args.lowpass
 
-    for highpass, lowpass in [(8, 14)]:
+    for highpass, lowpass in [(None, 4), (4, 8), (8, 14), (14, 30), (None, None)]:
 
 
         numChannels = 64
