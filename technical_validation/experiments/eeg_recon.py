@@ -4,6 +4,7 @@ import os
 import matplotlib.pyplot as plt
 
 def make_filter(high_pass_freq=None, low_pass_freq=None):
+    # adapted from regression_linear_forward_model.py
     # Create the filter
     if high_pass_freq and low_pass_freq:
         filter_ = scipy.signal.butter(N= 1,
@@ -30,6 +31,7 @@ def make_filter(high_pass_freq=None, low_pass_freq=None):
 
 def time_lag_matrix(input_, tmin, tmax):
     """Create a time-lag matrix from a 2D numpy array.
+    Adapted from regression_linear_forward_model.py
 
     Parameters
     ----------
@@ -61,7 +63,7 @@ def time_lag_matrix(input_, tmin, tmax):
 def main():
     # Load the model and the test envelope
     model_dir = './technical_validation/experiments/results_linear_forward'
-    model_filename = 'model_sub-001_-6_26_None_4.npy'
+    model_filename = 'model_sub-001_-6_26_None_None.npy'
     model_path = os.path.join(model_dir, model_filename)
 
     env_dir = './derivatives/preprocessed_stimuli'
@@ -96,7 +98,7 @@ def main():
     # Plot the results
     plt.figure(figsize=(10, 5))
     plt.plot(pred_eeg[0:1000,:], label='Predicted EEG')
-    plt.plot(test_env[0:1000, 0], label='Test Envelope')
+    # plt.plot(test_env[0:1000, 0], label='Test Envelope')
     # plt.legend()
     plt.show()
 
