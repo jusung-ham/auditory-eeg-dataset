@@ -255,6 +255,7 @@ derivatives/
 technical_validation/experiments/results*/
 # figures directory
 technical_validation/experiments/figures/
+technical_validation/experiments/predictions/
 
 # MacOS files
 .DS_Store
