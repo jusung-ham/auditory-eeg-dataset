@@ -176,7 +176,7 @@ def training_loop(subject, data_folder, features, highpass, lowpass, tmin, tmax,
     test_info['95_percentile_per_channel'] = np.percentile(null_distr, 95, axis=0).tolist()
     test_info['95_percentile'] = np.percentile(test_info['null_distr'], 95)
 
-    return test_info, model
+    return test_info
 
 
 
@@ -244,7 +244,6 @@ if __name__ == "__main__":
                 # save the results
                 with open(save_path, 'w') as fp:
                     json.dump(result, fp)
-                np.save(os.path.join(results_folder, f"model_{subject}_{tmin}_{tmax}_{highpass}_{lowpass}.npy"), model)
             else:
                 print(f"Results for {subject} already exist, skipping...")
 
